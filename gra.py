@@ -1,9 +1,7 @@
 import random
 
-# pobranie imienia użytkownika
 imie = input("Podaj swoje imię: ")
 
-# pobranie zakresu liczb
 while True:
     try:
         poczatek = int(input(f"Cześć {imie}, podaj początek zakresu: "))
@@ -15,18 +13,14 @@ while True:
     except ValueError:
         print("Nieprawidłowe dane!")
 
-# wygenerowanie losowej liczby
 liczba = random.randint(poczatek, koniec)
 
-# licznik kroków
 kroki = 0
 
-# pętla główna
 while True:
     kroki += 1
-    # pobranie liczby od użytkownika
     try:
-        wpis = input("Zgadnij liczbę (lub X aby zakończyć): ")
+        wpis = input("Zgadnij liczbe (lub X aby zakończyć): ")
         if wpis == "X":
             print("Poddajesz się...")
             break

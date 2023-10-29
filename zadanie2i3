@@ -1,0 +1,8 @@
+import json
+
+# Otwarcie pliku JSON
+with open("imiona.json", "r") as plik:
+    data = json.load(plik)
+
+# Teraz 'data' zawiera zawartość pliku JSON
+print(data)

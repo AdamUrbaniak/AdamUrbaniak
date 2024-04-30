@@ -1,0 +1,77 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Adam Urbaniak}
+\title{Porównanie algorytmów planowania ścieżki dla robotów mobilnych}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Omówienie problemu}
+W dzisiejszych czasach roboty mobilne odgrywają coraz większą rolę w różnych dziedzinach życia, w tym w sprzątaniu i pielęgnacji terenów zielonych. Kluczowym wyzwaniem dla takich robotów jest efektywne planowanie ścieżki, aby mogły one poruszać się po swoim otoczeniu w sposób bezpieczny i efektywny.
+
+Roboty mobilne, takie jak roboty sprzątające i koszące, są coraz powszechniej stosowane w różnych dziedzinach życia codziennego. Ich głównym zadaniem jest wykonywanie określonych czynności, takich jak sprzątanie domu czy koszenie trawników, w sposób autonomiczny i bez potrzeby ciągłego nadzoru człowieka. Jednym z kluczowych elementów skutecznego działania tych robotów jest zdolność do planowania optymalnej trasy poruszania się po otoczeniu.
+
+Problem planowania ścieżki dla robotów mobilnych polega na znalezieniu najbardziej optymalnej trasy, która umożliwi robotowi dotarcie do celu w sposób bezpieczny i efektywny. W zależności od specyfiki zadania i warunków środowiskowych, mogą istnieć różne czynniki wpływające na proces planowania trasy, takie jak obecność przeszkód, zmienne warunki terenowe czy ograniczenia czasowe.
+
+Algorytmy planowania ścieżki dla robotów mobilnych mają za zadanie rozwiązywać ten problem poprzez generowanie trajektorii, które umożliwią robotowi bezpieczne i skuteczne poruszanie się po otoczeniu. Istnieje wiele różnych podejść i technik do planowania ścieżki, które mogą być stosowane w zależności od specyfiki zadania i wymagań aplikacyjnych.
+
+W kontekście robotów sprzątających i koszących, kluczowym wyzwaniem jest skuteczne omijanie przeszkód, takich jak meble w przypadku robotów sprzątających, lub zmienne warunki terenowe, takie jak nachylenia czy nierówności terenu, w przypadku robotów koszących. Dlatego też algorytmy planowania ścieżki dla tych robotów muszą uwzględniać specyficzne warunki środowiskowe oraz zapewniać efektywne omijanie przeszkód i adaptację do zmieniających się warunków.
+
+\section{Porównanie algorytmów planowania ścieżki}
+Teraz omówimy kilka algorytmów planowania ścieżki dla robotów mobilnych, ze szczególnym uwzględnieniem robotów sprzątających i koszących.
+
+\subsection{Algorytm A*}
+Algorytm A* jest jednym z najpopularniejszych algorytmów stosowanych do planowania ścieżki dla robotów mobilnych. Polega on na przeszukiwaniu grafu stanów, gdzie wierzchołki reprezentują kolejne stany robota, a krawędzie reprezentują możliwe ruchy. Algorytm A* wykorzystuje heurystykę, która szacuje koszt dotarcia do celu, co umożliwia efektywne znajdowanie optymalnej trasy.
+
+\subsection{Algorytm RRT (Rapidly-exploring Random Tree)}
+Algorytm RRT jest techniką probabilistyczną, która generuje drzewo stanów na podstawie losowych prób w przestrzeni konfiguracyjnej robota. Algorytm ten jest szczególnie skuteczny w przypadku robotów poruszających się w dynamicznych i nieprzewidywalnych środowiskach, ponieważ umożliwia szybkie dostosowanie trasy do zmieniających się warunków.
+
+\subsection{Algorytm D* Lite}
+Algorytm D* Lite jest modyfikacją algorytmu D*, która umożliwia efektywne planowanie ścieżki w dynamicznie zmieniających się środowiskach. Algorytm ten operuje na grafie stanów, aktualizując koszty dotarcia do poszczególnych wierzchołków w miarę odkrywania nowych informacji o otoczeniu. Dzięki temu, robot może szybko reagować na zmiany i adaptować swoją trasę do nowych warunków.
+
+\subsection{Algorytm DFS (Depth-First Search)}
+Algorytm DFS jest jednym z najprostszych algorytmów przeszukiwania grafu, który polega na eksplorowaniu środowiska poprzez głębokie przeszukiwanie. W kontekście planowania ścieżki dla robotów mobilnych, algorytm DFS może być stosowany do generowania trajektorii w przestrzeni konfiguracyjnej robota. Jednakże, ze względu na brak heurystyki, algorytm DFS może nie być najlepszym wyborem w przypadku robotów poruszających się w dużych i złożonych środowiskach.
+
+\section{Porównanie wybranych algorytmów}
+Porównajmy teraz wybrane algorytmy pod względem ich złożoności obliczeniowej, skuteczności w różnych warunkach środowiskowych oraz adaptacji do zmieniających się warunków.
+
+\subsection{Złożoność obliczeniowa}
+Złożoność obliczeniowa jest jednym z kluczowych czynników wpływających na wydajność algorytmów planowania ścieżki. Algorytmy, które mają niższą złożoność obliczeniową, mogą być bardziej efektywne w przypadku dużych i złożonych środowisk.
+
+\subsection{Algorytm A*}
+\begin{itemize}
+    \item \textbf{Czas obliczeniowy:} W najlepszym przypadku, złożoność czasowa algorytmu A* jest rzędu \(O(1)\), ale w najgorszym przypadku może osiągać \(O(b^d)\), gdzie \(b\) to gałąź drzewa, a \(d\) to głębokość drzewa.
+    \item \textbf{Przykład:} Dla prostego przypadku, gdzie droga jest prosta, liczba operacji może być bardzo mała, co skutkuje szybkim czasem wykonania.
+\end{itemize}
+
+\subsection{Algorytm RRT}
+\begin{itemize}
+    \item \textbf{Czas obliczeniowy:} Złożoność czasowa algorytmu RRT zależy od liczby iteracji potrzebnych do znalezienia optymalnej ścieżki. W zależności od skuteczności generowania losowych punktów, może to być rzędu \(O(n \log n)\) lub \(O(n^2)\), gdzie \(n\) to liczba wierzchołków w drzewie.
+    \item \textbf{Przykład:} Dla prostej przestrzeni o niewielkiej liczbie przeszkód, algorytm może działać szybko i efektywnie.
+\end{itemize}
+
+\subsection{Skuteczność w różnych warunkach}
+Niektóre algorytmy mogą być bardziej skuteczne w określonych warunkach środowiskowych, takich jak obecność przeszkód czy zmienne warunki terenowe. Dlatego też ważne jest, aby wybrać algorytm, który najlepiej odpowiada specyfice zadania i warunkom pracy robota.
+
+\subsection{Adaptacja do zmieniających się warunków}
+Roboty mobilne często muszą radzić sobie ze zmieniającymi się warunkami środowiskowymi, takimi jak pojawienie się nowych przeszkód czy zmiany w topografii terenu. Dlatego też istotne jest, aby wybrane algorytmy umożliwiały szybką adaptację do zmieniających się warunków i efektywne replanowanie trasy w razie potrzeby.
+
+\section{Wnioski}
+Analizując omawiane algorytmy planowania ścieżki dla robotów mobilnych, można zauważyć, że każdy z nich ma swoje zalety i ograniczenia. Wybór odpowiedniego algorytmu powinien zależeć od specyfiki zadania, warunków środowiskowych oraz wymagań aplikacyjnych. Istotne jest również ciągłe monitorowanie i rozwój technik planowania ścieżki, aby zapewnić skuteczne i efektywne poruszanie się robotów mobilnych w różnych warunkach.
+
+\section{Referencje}
+Dodatkowe informacje i źródła:
+\begin{itemize}
+    \item LaValle, S.M. (2006). Planning Algorithms. Cambridge University Press.
+    \item Karaman, S., \& Frazzoli, E. (2011). Sampling-based algorithms for optimal motion planning. The International Journal of Robotics Research, 30(7), 846-894
+    \item Hart, P.E., Nilsson, N.J., \& Raphael, B. (1968). A Formal Basis for the Heuristic Determination of Minimum Cost Paths. IEEE Transactions on Systems Science and Cybernetics, 4(2), 100-107  algorytm A*
+\end{itemize}
+
+\end{document}
